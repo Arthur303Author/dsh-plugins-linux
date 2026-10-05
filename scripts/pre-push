@@ -1,0 +1,18 @@
+#!/bin/sh
+# Pre-push privacy gate for this repository.
+#
+# Installed by scripts/install-hooks.sh -- .git/hooks/ is not tracked by git, so
+# the template lives here and each clone installs it once.
+#
+# Runs scripts/privacy-check.sh and aborts the push when it finds
+# machine-specific or secret-looking content in the working tree, the full
+# history, or tracked file paths. The script's exit code is what git acts on:
+# 0 = clean, 1 = findings, 2 = not a repo, 3 = the scan itself failed.
+#
+# Bypass deliberately and rarely with:  git push --no-verify
+
+root=$(git rev-parse --show-toplevel 2>/dev/null) || exit 2
+[ -n "$root" ] || exit 2
+cd "$root" || exit 2
+
+exec sh scripts/privacy-check.sh

@@ -1,0 +1,23 @@
+{
+  "name": "@dsh-external/dsh-screen-agent-linux",
+  "version": "0.1.0",
+  "description": "Linux 屏幕视觉：截屏回图给模型、原生分辨率裁剪读小字、EWMH 窗口列表（X11，零第三方依赖）",
+  "private": true,
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "license": "BSD-3-Clause",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

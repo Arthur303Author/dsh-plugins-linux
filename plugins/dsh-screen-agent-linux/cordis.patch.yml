@@ -1,0 +1,5 @@
+# Loader patch for this plugin when it is assembled through a profile bundle
+# list instead of the runtime injector. One entry, id-targeted, no config.
+- insert:
+    - id: screen-agent-linux
+      name: '@dsh-external/dsh-screen-agent-linux'

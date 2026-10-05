@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# 本机运行数据与日志
+logs/
+state/
+*.log
+
+# Node
+node_modules/
+dist/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# 本机探测产物：探针跑出来的截图 / JSON，属于运行数据不是源码
+**/probe/out/
